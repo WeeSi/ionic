@@ -1,0 +1,8 @@
+{
+  "name": "GSB",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "2d1b1061"
+}

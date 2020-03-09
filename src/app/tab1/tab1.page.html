@@ -1,0 +1,78 @@
+
+<ion-header no-shadow no-border hidenav-header>
+  <ion-toolbar> 
+  <div>
+      <div class="ion-activatable">
+    <div searchBar id="searchBar" class="search-content" >
+      <div class="search"  >
+        <div class="title-button">
+        <ion-buttons class="openNav" slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <div (click)="openSearch()" class="openSearch">
+            <span class="title">Chercher les mèdecins</span>
+          </div>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+          <div class="avatar-content">
+              <ion-avatar class="avatar">
+                  <img src="../../assets/picture_1558954558086.jpg">
+                </ion-avatar>
+              </div>
+              
+    </div>
+  
+  </div>
+</div>
+
+</div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content  hidenav-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-title>
+      Médecins
+  </ion-title>
+  <ion-list lines="none">
+    <ion-item-sliding (click)="openMedecin(list)" *ngFor="let list of medecinsList">
+      <ion-item>
+       <div class="img-content"><img class="user_img" src="../../assets/{{list.img}}"> </div> 
+        <ion-label><ion-text >
+          <h3 class="m-name">Dr {{list.firstname}} {{list.lastname}}</h3>
+          <p class="m-pro">{{list.spec}} - Lyon</p>
+          <p class="m-city"></p>
+          <div class="m-rate">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star not-checked"></span>
+      </div>
+        </ion-text></ion-label>
+        <ion-buttons >
+            <ion-button><ion-icon name="ios-arrow-forward"></ion-icon></ion-button>
+             </ion-buttons> 
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="removePraticien(list)">Supprimer</ion-item-option>
+      </ion-item-options>
+      
+    </ion-item-sliding>
+
+    
+    </ion-list>
+
+
+    <ion-infinite-scroll threshold="15%" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    
+</ion-content>

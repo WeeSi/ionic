@@ -1,0 +1,107 @@
+<ion-menu side="start" menuId="first" type="overlay" contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="primary">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>  
+
+<ion-header no-shadow no-border no-blur>
+    <ion-toolbar >
+      <div class="header">
+        <ion-buttons>
+            <ion-button (click)="close()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+          </ion-buttons>
+          <div>
+              Dr.{{test.firstname}} {{test.lastname}}
+          </div>
+        </div>
+          <ion-buttons slot="end">  <ion-button ><ion-icon name="heart-empty"></ion-icon></ion-button></ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="image-box">
+        <div 
+          class="image-box__background" [ngStyle]="{'background-image':'url(../../assets/'+test.img+')'}"></div>
+        <div class="image-box__overlay"></div>
+        <div class="image-box__content">
+        </div>
+      </div>
+
+    <div class="schedule"> <ion-button (click)="openMedecin(test)" expand="block" >Prendre rendez-vous</ion-button> </div> 
+<ion-content id="IonContent" #IonContent>
+  <div class="ion-padding content-container">
+
+    <div>
+        <div class="m-name-m-age" #triggerElement>
+            <div>
+                <h1 class="m-name">
+                   Dr.{{test.firstname}} {{test.lastname}}
+                </h1>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="m-location">
+        <div>
+            <p class="m-loc-icon"><ion-icon name="pin"></ion-icon></p>
+             <p class="m-loc-text">{{test.city}}</p>
+        </div>
+    </div>
+
+    <div class="m-rate">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star not-checked"></span>
+            <span class="rate-text">(4.0)</span>
+    </div>
+
+    <div class="m-content-desc" >
+        <h5 class="m-desc"> Desciption</h5>
+      <p>
+            Stephen Strange, alias Docteur Strange est un super-héros évoluant dans l'univers Marvel de la maison d'édition Marvel Comics. Créé par le scénariste Stan Lee et le dessinateur Steve Ditko, le personnage de fiction apparaît pour la première fois dans le comic book Strange Tales #110 en juillet 1963.
+      </p>
+    </div>
+
+    <div class="m-content-desc" >
+            <h5 class="m-desc"> Formations</h5>
+          <p>
+                Le Docteur Strange est le « Maître des arts mystiques » auquel tous les autres super-héros font appel quand ils ont affaire à des adversaires utilisant des pouvoirs occultes. Il est aussi connu pour avoir été pendant un temps le Sorcier suprême de la dimension terrestre.
+          </p>
+        </div>
+      
+        <div class="m-content-desc"  >
+                <h5 class="m-desc"> Expériences</h5>
+              <p>
+                    Le docteur Stephen Strange est un brillant neurochirurgien, mais aussi un être dépravé, cynique et égoïste. Oublieux de ses devoirs et de la déontologie médicale, il cherche avant tout à faire fortune et sélectionne ses patients d'après le contenu de leur compte en banque. Mais une nuit, alors qu'il rentre d'une soirée bien arrosée, il a un accident de voiture. Il en sort vivant mais ses mains sont si abîmées qu'il ne peut plus opérer. Désespéré, il sombre dans une profonde dépression et subit de nombreuses interventions afin de récupérer sa dextérité légendaire, en vain. 
+              </p>
+            </div>
+      
+            <div class="m-content-desc">
+                    <h5 class="m-desc"> Langues</h5>
+                  <p>
+                      Americain
+                  </p>
+                </div>
+
+            <div class="m-content-desc">
+                    <h5 class="m-desc"> Extras</h5>
+                    <p>
+                            Le Docteur Strange est un magicien qui tire ses pouvoirs d'entités mystiques telles qu'Agamotto (en), Cyttorak, Ikonn, Oshtur, Raggadorr ou Watoomb, celles-ci lui permettant de puiser dans leurs énergies pour lancer ses sorts. Par ailleurs, comme son prédécesseur l'Ancien, il peut se servir et manipuler les énergies mystiques qui l'entourent afin d'en obtenir divers effets. Il dispose enfin d'une vaste connaissance sur de nombreux sortilèges et incantations diverses, ce qui lui permet d'invoquer les noms et/ou les aspects de diverses entités mystiques et d'objets extradimensionnels.
+                    </p>
+                </div> 
+                
+
+  </div>
+</ion-content>

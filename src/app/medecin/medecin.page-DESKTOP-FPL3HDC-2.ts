@@ -1,0 +1,59 @@
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
+import { ModalController, IonContent } from '@ionic/angular';
+import { CalendrierPage } from '../calendrier/calendrier.page';
+
+
+@Component({
+  selector: 'app-medecin',
+  templateUrl: './medecin.page.html',
+  styleUrls: ['./medecin.page.scss'],
+})
+export class MedecinPage implements OnInit {
+
+  constructor(public modalController: ModalController, private renderer: Renderer2) { }
+@ViewChild('IonContent', {read : ElementRef, static : true})  contentArea: ElementRef;
+@ViewChild('triggerElement', {read: ElementRef, static: true}) triggerElement: ElementRef;
+@Input() test: any;
+  private observer: IntersectionObserver;
+
+  close() {
+    this.modalController.dismiss();
+  }
+
+  async openMedecin(list) {
+    const modal = await this.modalController.create({
+      component : CalendrierPage,
+       componentProps: { 
+      test: list,
+    }
+    });
+
+    return await modal.present();
+}
+
+  ngOnInit() {
+    this.observer = new IntersectionObserver(entries => {
+
+      entries.forEach((entry: any) => {
+        if (screen.orientation.type === 'portrait-primary') {
+          if (entry.isIntersecting) {
+            // add transform, en gros on ajoute la classe no-transform
+            // console.log('remove class');
+            this.renderer.removeClass(this.contentArea.nativeElement, 'remove-transform');
+          } else {
+            // console.log('add class');
+            // remove transform, en gros on enleve la classe no-transform
+            this.renderer.addClass(this.contentArea.nativeElement, 'remove-transform');
+          }
+        } else if (screen.orientation.type === 'landscape-primary') {
+          this.renderer.addClass(this.contentArea.nativeElement, 'remove-transform');
+
+        }
+
+      });
+    });
+
+    this.observer.observe(this.triggerElement.nativeElement);
+   }
+
+}

@@ -1,0 +1,136 @@
+.close{
+    color:white;
+}
+.align-center{
+    text-align: center;
+}
+.header{
+    display: -webkit-box;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    height: 170px;
+}
+.title-date{
+    text-transform: unset !important;
+    font-size: 17px;
+    font-weight: 300;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 0;
+    color: white;
+    margin-bottom: 0;
+}
+
+.img-content {
+    height: 43px;
+    width: 43px;
+    margin-left: 0px;
+    margin-right: 15px;
+}
+
+.user_img {
+    width: 100%;
+    margin-right: 15px;
+    height: 100%;
+    border-radius: 90px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+h5{
+    margin:0;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: var(--ion-title-color);
+    font-size: 17px;
+}
+
+h5::first-letter{
+    text-transform: capitalize;
+}
+
+.hours{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+ion-item {
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+    // here other custom CSS from documentation
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .item-native{
+      padding:0;
+  }
+button{
+    margin-right: 15px;
+}
+
+button:last-child{
+    margin-right: 0px;
+}
+
+
+ion-button{
+    --background: var(--ion-color-primary);
+    color: white;
+    height: 50px;
+    text-transform: none;
+    --border-radius: 15px;
+}
+
+.calendar-content{
+    margin-top: 70px;
+}
+
+ion-segment{
+    overflow: scroll;
+    display: -webkit-inline-box;
+}
+ion-segment-button{
+    margin-right: 10px;
+}
+
+ion-segment-button:last-child{
+    margin-right: 0px;
+}
+
+.segment-button-checked{
+    background: var(--color-checked);
+    color: white;
+}
+
+.m-card{
+    position: absolute;
+    top: 122px;
+    z-index: 11;
+    background: var(--background);
+    margin-left: 20px;
+    margin-right: 20px;
+    right: 0;
+    left: 0;
+    border-radius: 15px;
+    box-shadow: 0 77px 88px rgba(0, 0, 0, 0), 0 9px 15px rgba(0, 0, 0, 0.04);
+}
+
+.m-name{
+    font-weight: bold;
+    color: var(--ion-color-primary);
+}
+
+ion-segment-button{
+    border-radius: 10px;
+}
+

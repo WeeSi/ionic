@@ -1,0 +1,79 @@
+<ion-header no-border >
+    <ion-toolbar>
+    <div class="header-content"> 
+     <div>
+      <div class="img-content">
+        <img class="img-user" src="../../assets/picture_1558954558086.jpg">
+      </div>
+     </div>
+     <div>
+      <div>
+        <h1 class="u-lastname">
+          Ehui
+        </h1>
+      </div>
+     </div> 
+    </div>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+
+      <ion-list no-ripple>
+      <div>
+      <h5>
+      Paramètres du compte
+      </h5>
+    </div>
+
+    <div class="ion-activatable">
+    <ion-item (click)="openPersonal()" class="item_settings">
+        <ion-label>Information personnel</ion-label>
+        <img class="settings-icon" src="../../assets/user.svg"/>
+        <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+  </div>
+
+    <ion-item class="item_settings">
+        <ion-label >Paiement</ion-label>
+        <img class="settings-icon" src="../../assets/wallet.svg"/>
+    </ion-item>
+
+    <ion-item class="item_settings">
+        <ion-label>Notifications</ion-label>
+        <img class="settings-icon" src="../../assets/bell.svg"/>
+    </ion-item>
+
+    <div class="ion-activatable">
+    <ion-item (click)="presentActionSheet()" class="item_settings">
+        <ion-label>Thème</ion-label>
+        <img class="settings-icon" src="../../assets/palette.svg"/>
+        <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+  </div>
+
+    <div class="user-legal">
+        <h5>
+        Legal
+        </h5>
+      </div>
+
+      <ion-item class="item_settings">
+        <ion-label>Conditions de services</ion-label>
+        <img class="settings-icon" src="../../assets/audit.svg"/>
+    </ion-item>
+
+      <ion-item (click)="presentAlert()" class="item_settings">
+          <ion-label class="user-disconnect">Se déconnecter</ion-label>
+      </ion-item>
+
+
+
+    </ion-list>
+                    
+          
+      </div>
+    
+  
+</ion-content>

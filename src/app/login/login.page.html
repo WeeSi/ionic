@@ -1,0 +1,72 @@
+<ion-content
+>
+  <div id="wave">
+
+    <div class="ion-padding">
+
+
+    <div class="img-login">
+      <img src="../../assets/img_doctors.jpg" alt="">
+    </div>
+    <div class="text-login">
+      <h2 class="title-login">
+        Connectez-vous
+      </h2>
+      <p class="p-login">
+          Après votre connexion vous pourrez commencer a prendre des rendez-vous avec nos médecins.
+      </p>
+    </div>
+    <div class="credentials">
+
+      <div class="id">
+        <ion-item>
+            <ion-label  position="floating">Identifiant</ion-label>
+            <ion-input type="text" value=""></ion-input>
+         </ion-item>
+        </div>
+
+         <div class="password">
+         <ion-item>
+             <ion-label position="floating">Mot de passe</ion-label>
+             <ion-input [(ngModel)]="password" [type]="passwordType" value=""></ion-input>
+             <ion-icon [name]="iconeye" slot="end" (click)="togglePassword()" class="ion-align-self-center"></ion-icon>
+         </ion-item>
+        </div>
+
+        <div class="forgot-password">
+          <span>
+            Mot de passe oublié?
+          </span>
+        </div>
+
+         <div class="sign-in" (click)="tabPage()"><ion-button expand="block" >Se connecter</ion-button> </div> 
+
+         <div class="connect-with">
+            <span>
+            Ou connectez-vous avec 
+            </span>
+
+            <div class="connect-with-btn">
+
+              <div class="facebook">
+                 <div class="btn"><ion-icon class="logo-facebook" name="logo-facebook"></ion-icon><span>Facebook</span> </div>
+              </div>
+
+              <div class="google">
+                  <div class="btn"><ion-icon class="logo-google" name="logo-google"></ion-icon><span>Google</span> </div>
+               </div>
+
+            </div>
+
+          </div>
+
+          <div class="sign-up-btn">
+            <div>
+              <span>Pas de compte? </span><span class="sign-up-page">Inscrivez-vous</span>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</div>
+</ion-content>

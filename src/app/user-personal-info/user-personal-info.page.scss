@@ -1,0 +1,27 @@
+ion-item {
+    --padding-start:0px;
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+}
+
+.ion-padding{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.user-edit-content{
+    padding-top:25px;
+}
+
+ion-label{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    font-size: 22px !important;
+    font-weight: 500;
+    color: var(--ion-user-lastname) !important;
+}
+
+ion-button{
+    text-transform: capitalize;
+}
+

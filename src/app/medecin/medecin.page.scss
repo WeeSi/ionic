@@ -1,0 +1,354 @@
+
+#IonContent{
+    transform: translate3d(0px, 200px, 0px);
+    --background:transparent;
+    transition: 0.6s;
+    --offset-top: 200px !important;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+ion-toolbar{
+    --background:transparent;
+}
+
+ion-buttons{
+    color: white;
+}
+
+:host{
+    --offset-bottom: 200px !important;
+    background: var(--image-url) center center no-repeat;
+    background-size: cover;
+}
+
+.remove-transform{
+    transform : translate3d(0,0,0) !important;
+    transition: 0.6s;
+}
+
+.content-container{
+    height: 100%;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding-top: 25px;
+    overflow: scroll;
+    padding-bottom: 65px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #545454;
+}
+
+
+.m-desc{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.m-name{
+    font-size:23px !important;
+    font-weight: 600;
+}
+
+.m-loc-text.street, .m-rate{
+    display: block;
+}
+
+.m-loc-icon{
+    margin-right: 5px;
+}
+
+.m-location, .m-rate{
+    margin-top:0px;
+    margin-bottom: 10px;
+}
+
+.checked, .fa-star{
+    margin-right: 7px;
+    font-size: 14px;
+}
+
+.not-checked{
+    color: white;
+    text-shadow: 0 0 1px #000
+}
+
+.checked {
+    color: #3880ff;
+}
+
+.rate-text{
+    margin-left:5px;
+    font-size: 14px;
+    color: #949494;
+}
+
+.m-age, .m-age-text{
+    color: #5c97ff;
+}
+
+.m-age-text{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.m-content-desc{
+    margin-top: 25px;
+}
+
+.avatar-content{
+    display: flex;
+    justify-content: center;
+}
+.avatar{
+    height: 85px;
+    width: 85px;
+}
+
+.doctor-name, .specialities, .city{
+    text-align: center;
+}
+
+.doctor-name{
+    font-weight: 600;
+    color:white;
+    margin-bottom: 0;
+}
+.appointment{
+    text-align: center;
+    margin-top:20px;
+}
+
+.pin{
+    vertical-align: middle;
+    font-size: 25px;
+    color: #c3c6ce;
+    float: right;
+    margin: 0;
+}
+
+.desc{
+   padding-left: 16px;
+   padding-right: 16px;
+   color: #8f9095;
+   font-size: 14px;
+}
+
+.sc-ion-label-md-h{
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 15px;
+}
+
+.text{
+    display: inline-block;
+    vertical-align: text-bottom;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.medecin-desc{
+    margin: 10px 22px 10px 22px;
+    box-shadow: 0 1px 26px 0 rgba(0,0,0,0.05), 0 1px 5px 0 rgba(0,0,0,0.1), 0 1px 5px 0 rgba(0,0,0,.06) !important;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.item-label{
+    border-radius: 10px;
+}
+
+.user_background{
+    background:linear-gradient(0deg,rgba(255,0,150,0.3),rgba(255,0,150,0.3)),url(../../assets/2975507.jpg);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.back-button{
+    position: absolute;
+    font-size: 16px;
+}
+
+
+.medecin-comp{
+    display: flex;
+}
+
+.medecin-lines{
+    position: relative;
+}
+
+.medecin-comp .medecin-lines{
+    width: calc(100%/3);
+    text-align: center;
+    text-align: center;
+    padding: 5px;
+    padding: 20px 5px 20px 5px;
+}
+
+.medecin-lines .medecin-icon{
+    color: #3171e0;
+    font-size: 25px;
+    color: #3171e0;
+}
+
+.jesaispas{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.count{
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: #3171e0;
+    color: white;
+    padding: 7px;
+    border-radius: 50px;
+    font-size: 13px;
+    box-shadow: 0 1px 26px 0 rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.06) !important;
+    width: 29px;
+}
+/* 
+The container box is relative so we can position stuff inside of it 
+*/
+.image-box {
+    position: absolute;
+    height: 500px;
+    z-index: 0;
+    width: 100%;
+ 
+  }
+  
+  
+  .image-box__background,
+  .image-box__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  /* 
+  The background image div sizes and positions the background itself.
+  It's also at the bottom-most position in our "div stack" (z-index 1)
+  
+  We set the image url via a CSS custom property, that's set via the style attribute in our HTML
+  */
+  .image-box__background {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+   
+    z-index: 1;
+  }
+  
+  /* 
+  The overlay div is just a colored element with some opacity.
+  It's above the background image in our stack, so it appears to 
+  darken the image 
+  */
+  .image-box__overlay {
+    background: rgba(0, 0, 0, 0.27);
+    z-index: 2;
+  }
+  
+  /* 
+  The content div is at the top of our stack. 
+  We'd probably add some padding or flexbox properties here as well, 
+  to place the content appropriately
+  */
+  .image-box__content {
+    position: relative;
+  
+    z-index: 3;
+    
+    color: white;
+    text-align: center;
+    display: block;
+    align-items: center;
+  }
+
+p{
+    color: var(--ion-text-alt);      
+  }
+
+  .schedule{
+    margin: 0;
+    position: fixed;
+    bottom: 10px;
+    z-index: 2;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+ion-button{
+    --background: var(--ion-color-primary);
+    color: white;
+    height: 50px;
+    text-transform: none;
+    --border-radius: 15px;
+}
+
+.hours{
+    text-align: center;
+}
+.hours-list{
+    overflow: auto;
+    display: flex;
+}
+
+.hours-list button{
+    padding: 15px;
+    text-align: center;
+    color: #575757;
+    border-radius: 5px;
+    border: 1px solid #e9e9e9;
+    background: transparent;
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.hours-list button ion-label{
+    width: 41px;
+    display: block;
+    border:none;
+    padding:0px;
+}
+
+ion-item {
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+    // here other custom CSS from documentation
+  }
+
+button{
+    margin-right: 15px;
+}
+
+button:last-child{
+    margin-right: 0px;
+}
+
+button.ion-no-padding:focus {
+    background: #3880ff !important;
+    color: white !important;
+    outline: none;
+    border:none;
+}

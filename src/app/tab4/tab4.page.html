@@ -1,0 +1,409 @@
+
+<ion-header no-shadow no-border hidenav-header>
+  <ion-toolbar> 
+  <div>
+      <div class="ion-activatable">
+    <div id="searchBar" class="search-content" >
+      <div class="search"  >
+        <div class="title-button">
+        <ion-buttons class="openNav" slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <div (click)="openSearch()" class="openSearch">
+            <span class="title">Chercher les Médicaments</span>
+          </div>
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+          <div class="avatar-content">
+              <ion-avatar class="avatar">
+                  <img src="../../assets/picture_1558954558086.jpg">
+                </ion-avatar>
+              </div>
+              
+    </div>
+  
+  </div>
+</div>
+
+</div>
+</ion-toolbar>
+</ion-header>
+  
+<ion-content hidenav-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <ion-title>
+          Médicaments
+      </ion-title>
+
+    <h6>On classe par type</h6>
+    <div>
+      <ion-slides [options]="sliderConfig">
+        <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <img src="../../assets/efferalgan.png">
+        </ion-card-header>
+        <ion-card-content>
+            <ion-card-title>Efferalgan</ion-card-title>
+            EFFERALGAN 500 mg, comprimé orodispersible
+            paracétamol
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card>
+          <ion-card-header>
+            <img src="../../assets/lysopaine.jpg">
+          </ion-card-header>
+          <ion-card-content>
+              <ion-card-title>Lysopaine</ion-card-title>
+              LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine.
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/nifluril.png">
+             
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-card-title>Nifluril</ion-card-title>
+                  Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                  Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/humex.jpg">
+                   
+                  </ion-card-header>
+                  <ion-card-content>
+                      <ion-card-title>Humex</ion-card-title>
+                      HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                      Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+      </ion-slides>
+       
+
+        </div>
+
+        <h6>On classe par type</h6>
+        <div>
+          <ion-slides [options]="sliderConfig">
+            <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <img src="../../assets/efferalgan.png">
+              
+            </ion-card-header>
+            <ion-card-content>
+                <ion-card-title>Efferalgan</ion-card-title>
+                EFFERALGAN 500 mg, comprimé orodispersible
+                paracétamol
+                Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations importantes pour votre traitement.
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+        <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/lysopaine.jpg">
+               
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-card-title>Lysopaine</ion-card-title>
+                  LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine
+                  Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+    
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/nifluril.png">
+                    
+                  </ion-card-header>
+                  <ion-card-content>
+                      <ion-card-title>Nifluril</ion-card-title>
+                      Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                      Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                  <ion-card>
+                      <ion-card-header>
+                        <img src="../../assets/humex.jpg">
+                        
+                      </ion-card-header>
+                      <ion-card-content>
+                          <ion-card-title>Humex</ion-card-title>
+                          HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                          Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+          </ion-slides>
+           
+    
+            </div>
+
+            <h6>On classe par type</h6>
+        <div>
+          <ion-slides [options]="sliderConfig">
+            <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <img src="../../assets/efferalgan.png">
+              
+            </ion-card-header>
+            <ion-card-content>
+                <ion-card-title>Efferalgan</ion-card-title>
+                EFFERALGAN 500 mg, comprimé orodispersible
+                paracétamol
+                Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations importantes pour votre traitement.
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+        <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/lysopaine.jpg">
+               
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-card-title>Lysopaine</ion-card-title>
+                  LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine
+                  Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+    
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/nifluril.png">
+                    
+                  </ion-card-header>
+                  <ion-card-content>
+                      <ion-card-title>Nifluril</ion-card-title>
+                      Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                      Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                  <ion-card>
+                      <ion-card-header>
+                        <img src="../../assets/humex.jpg">
+                        
+                      </ion-card-header>
+                      <ion-card-content>
+                          <ion-card-title>Humex</ion-card-title>
+                          HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                          Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+          </ion-slides>
+           
+    
+            </div>
+
+            <h6>On classe par type</h6>
+        <div>
+          <ion-slides [options]="sliderConfig">
+            <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <img src="../../assets/efferalgan.png">
+              <ion-card-title>Efferalgan</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                EFFERALGAN 500 mg, comprimé orodispersible
+                paracétamol
+                Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations importantes pour votre traitement.
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+        <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/lysopaine.jpg">
+                <ion-card-title>Lysopaine</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine
+                  Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+    
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/nifluril.png">
+                    <ion-card-title>Nifluril</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                      Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                  <ion-card>
+                      <ion-card-header>
+                        <img src="../../assets/humex.jpg">
+                        <ion-card-title>Humex</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                          HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                          Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+          </ion-slides>
+           
+    
+            </div>
+
+            <h6>On classe par type</h6>
+        <div>
+          <ion-slides [options]="sliderConfig">
+            <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <img src="../../assets/efferalgan.png">
+              <ion-card-title>Efferalgan</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                EFFERALGAN 500 mg, comprimé orodispersible
+                paracétamol
+                Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations importantes pour votre traitement.
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+        <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/lysopaine.jpg">
+                <ion-card-title>Lysopaine</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine
+                  Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+    
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/nifluril.png">
+                    <ion-card-title>Nifluril</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                      Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                  <ion-card>
+                      <ion-card-header>
+                        <img src="../../assets/humex.jpg">
+                        <ion-card-title>Humex</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                          HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                          Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+          </ion-slides>
+           
+    
+            </div>
+
+            <h6>On classe par type</h6>
+        <div>
+          <ion-slides [options]="sliderConfig">
+            <ion-slide>
+          <ion-card>
+            <ion-card-header>
+              <img src="../../assets/efferalgan.png">
+              <ion-card-title>Efferalgan</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                EFFERALGAN 500 mg, comprimé orodispersible
+                paracétamol
+                Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations importantes pour votre traitement.
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+        
+        <ion-slide>
+          <ion-card>
+              <ion-card-header>
+                <img src="../../assets/lysopaine.jpg">
+                <ion-card-title>Lysopaine</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                  LYSOPAÏNE MAUX DE GORGE, comprimé à sucer édulcoré au sorbitol et à la saccharine
+                  Veuillez lire attentivement cette notice avant de prendre ce médicament car elle contient des informations.
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+    
+          <ion-slide>
+              <ion-card>
+                  <ion-card-header>
+                    <img src="../../assets/nifluril.png">
+                    <ion-card-title>Nifluril</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                      Ce médicament est un anti-inflammatoire non stéroïdien (AINS). 
+                      Il lutte contre l'inflammation et la douleur, fait baisser la fièvre et fluidifie le sang.
+                  </ion-card-content>
+                </ion-card>
+              </ion-slide>
+    
+              <ion-slide>
+                  <ion-card>
+                      <ion-card-header>
+                        <img src="../../assets/humex.jpg">
+                        <ion-card-title>Humex</ion-card-title>
+                      </ion-card-header>
+                      <ion-card-content>
+                          HUMEX RHUME DES FOINS A LA BECLOMETASONE 50 microgrammes/dose, suspension pour pulvérisation nasale en flacon.
+                          Veuillez lire attentivement cette notice avant d'utiliser ce médicament.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-slide>
+          </ion-slides>
+           
+    
+            </div>
+</ion-content>

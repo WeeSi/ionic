@@ -1,0 +1,18 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<ion-app>
+    <ion-menu side="start" menuId="first" type="overlay" contentId="main-content" >
+        <ion-header  no-shadow no-border no-blur>
+          <ion-toolbar  class="drawer">
+            Docteuroo
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list lines="none">
+            <ion-item> <img class="drawer-icon" src="../../assets/doctor.svg"/> Mes médecins</ion-item>
+            <ion-item> <img class="drawer-icon" src="../../assets/invoice.svg"/> Mes factures</ion-item>
+            <ion-item> <img class="drawer-icon" src="../../assets/calendar.svg"/> Mes rendez-vous</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>          
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

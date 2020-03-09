@@ -1,0 +1,52 @@
+<ion-header no-shadow no-border no-blur>
+  <ion-toolbar >
+      <ion-buttons>
+          <ion-button (click)="close()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end"> <ion-button >Sauvegarder</ion-button></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <ion-title >
+        Modifier les informations personnelles
+  </ion-title>
+ 
+  <div class="ion-padding">
+    <div class="user-edit-content">
+      
+      <ion-item>
+         <ion-label position="stacked">Votre nom</ion-label>
+         <ion-input value="Ehui"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Votre prénom</ion-label>
+          <ion-input value="Franck"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Le sexe</ion-label>
+          <ion-select interface="action-sheet" cancelText="" >
+              <ion-select-option value="f">Femme</ion-select-option>
+              <ion-select-option value="m">Homme</ion-select-option>
+              <ion-select-option value="a">Autre</ion-select-option>
+            </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Date de naissance</ion-label>
+          <ion-datetime monthValues="1,2,3,4,5,6,7,8,9,10,11,12" yearValues="2014,2015" dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14" displayFormat="DD/MM/YY" pickerFormat="DD/MMM/YYYY"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Numéro de téléphone</ion-label>
+          <ion-input value="06 58 28 26 32"></ion-input>
+        </ion-item>
+     
+    </div>
+  </div>
+  
+</ion-content>

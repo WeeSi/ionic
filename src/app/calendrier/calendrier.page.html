@@ -1,0 +1,67 @@
+
+<ion-header no-shadow no-border no-blur id="header" >
+  <ion-toolbar color="primary" >
+    <div class="header">
+
+      <ion-buttons >
+          <ion-button class="close" slot="start" (click)="close()"><ion-icon name="ios-arrow-back"></ion-icon></ion-button>
+        </ion-buttons>
+
+        <ion-title class="title-date">
+          Heures et Dates
+        </ion-title>
+      </div>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="m-card">
+  <ion-item lines="none" >
+    <div class="img-content"><img class="user_img" src="../../assets/{{test.img}}"> </div> 
+     <ion-label><ion-text >
+       <h3 class="m-name">Dr {{test.firstname}} {{test.lastname}}</h3>
+       <p class="m-pro">{{test.spec}} - Lyon</p>
+       <p class="m-city"></p>
+     </ion-text></ion-label>
+   </ion-item>
+</div>
+
+<ion-content class="ion-padding">
+  
+  <div class="calendar-content">
+  <div>
+
+  <div class="title-month align-center"><h5>{{ viewTitle }}</h5></div>
+  <calendar [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  locale="fr-FR"
+  step="30"
+>
+</calendar>
+<input type="hidden" value="{{ date }}" [(ngModel)]="date">
+</div>
+
+<div class="hours align-center">
+
+  <div>
+    <h5>Heures disponibles</h5>
+  </div>
+
+           <ion-segment [(ngModel)]="time" >
+            <ion-segment-button *ngFor="let list of displayhours ; let i=index" [value]="list.slot">
+              {{list.slot}}
+            </ion-segment-button >
+           </ion-segment>
+
+</div>
+
+<div class="schedule"> <ion-button type="submit" expand="block" (click)="AddAppointment()" >Prendre rendez-vous</ion-button></div> 
+</div>
+</ion-content>
