@@ -70,10 +70,10 @@ async openPatient(list: any) {
 
    filterItems(searchTerm: string) {
      if (searchTerm != "") {
-      return this.medecinsList.filter((item: { firstname: string; lastname: string; }) => {
-        const searchFirstnameFirst = 'dr' + " " + item.firstname + " " + item.lastname;
+      return this.medecinsList.filter((item: { firstName: string; lastName: string; }) => {
+        const searchFirstnameFirst = 'dr' + " " + item.firstName + " " + item.lastName;
 
-        const searchLastnameFirst = 'dr' + " " + item.lastname + " " + item.firstname;
+        const searchLastnameFirst = 'dr' + " " + item.firstName + " " + item.lastName;
         // tslint:disable-next-line: max-line-length
         return searchFirstnameFirst.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 || searchLastnameFirst.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
       });

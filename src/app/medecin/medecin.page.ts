@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input } from '@angular/core';
-import { ModalController, IonContent } from '@ionic/angular';
+import { ModalController, IonContent, NavParams } from '@ionic/angular';
 import { CalendrierPage } from '../calendrier/calendrier.page';
+import { PatientService } from '../../app/api/services/patient.service';
 
 
 @Component({
@@ -10,7 +11,12 @@ import { CalendrierPage } from '../calendrier/calendrier.page';
 })
 export class MedecinPage implements OnInit {
 
-  constructor(public modalController: ModalController, private renderer: Renderer2) { }
+  constructor(
+    private modalController: ModalController, 
+    private renderer: Renderer2,
+    private NavParams : NavParams
+  ) { }
+
 @ViewChild('IonContent', {read : ElementRef, static : true})  contentArea: ElementRef;
 @ViewChild('triggerElement', {read: ElementRef, static: true}) triggerElement: ElementRef;
 @Input() test: any;
@@ -38,20 +44,12 @@ export class MedecinPage implements OnInit {
     this.modalController.dismiss();
   }
 
+addClient(){
 
-  async openCalendrier(list) {
-    const modal = await this.modalController.create({
-      component : CalendrierPage,
-       componentProps: { 
-      test: list,
-    }
-    });
-
-    return await modal.present();
 }
 
-
   ngOnInit() {
+    console.log(this.test[this.NavParams.get('id')]);
     this.observer = new IntersectionObserver(entries => {
 
       entries.forEach((entry: any) => {

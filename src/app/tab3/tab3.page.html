@@ -1,6 +1,6 @@
 
 <ion-header no-shadow no-border hidenav-header>
-    <ion-toolbar> 
+    <ion-toolbar *ngFor="let user of UserDto"> 
     <div>
         <div class="ion-activatable">
       <div id="searchBar" class="search-content" >
@@ -10,13 +10,13 @@
               <ion-menu-button></ion-menu-button>
             </ion-buttons>
             <div (click)="openSearch()" class="openSearch">
-              <span class="title">Chercher les patients</span>
+              <span class="title">Chercher les commerciaux</span>
             </div>
             <ion-ripple-effect></ion-ripple-effect>
           </div>
             <div class="avatar-content">
                 <ion-avatar class="avatar">
-                    <img src="../../assets/picture_1558954558086.jpg">
+                    <img src="http://localhost:3000/api/avatar/{{user.image}}">
                   </ion-avatar>
                 </div>
                 
@@ -34,16 +34,15 @@
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
     <ion-title>
-        Patients
+        Commercials
     </ion-title>
     <ion-list lines="none">
-      <ion-item-sliding (click)="openPatient(list)" *ngFor="let list of patient">
-        <ion-item>
-         <div class="img-content"><img class="user_img" src="../../assets/{{list.img}}"> </div> 
+      <ion-item-sliding  *ngFor="let list of commercials">
+        <ion-item (click)="openPatient(list)">
+         <div class="img-content"><img class="user_img" src="http://localhost:3000/api/avatar/{{list.image}}"> </div> 
           <ion-label><ion-text >
-            <h3 class="m-name">{{list.firstname}} {{list.lastname}}</h3>
-            <p class="m-pro">{{list.spec}}</p>
-            <p class="m-city">Lyon</p>
+            <h3 class="m-name">{{list.firstName}} {{list.lastName}}</h3>
+            <p class="m-pro">{{list.address}}</p>
           </ion-text></ion-label>
           <ion-buttons >
               <ion-button><ion-icon name="ios-arrow-forward"></ion-icon></ion-button>
@@ -51,7 +50,7 @@
         </ion-item>
   
         <ion-item-options side="end">
-          <ion-item-option (click)="unread(item)">Supprimer</ion-item-option>
+          <ion-item-option (click)="removeCommercial(list.id)">Supprimer</ion-item-option>
         </ion-item-options>
   
       </ion-item-sliding>

@@ -2,7 +2,11 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { HTTP_INTERCEPTORS,HttpClientModule } from '@angular/common/http';
+import { CookieModule } from '@ngx-toolkit/cookie';
+import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
@@ -23,12 +27,18 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 import { CalendrierPageModule } from './calendrier/calendrier.module';
 
 
+//material angular
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
+    CookieModule.forRoot(),
      AppRoutingModule,
     CommonModule,
     MedecinPageModule,
@@ -38,6 +48,10 @@ import { CalendrierPageModule } from './calendrier/calendrier.module';
     LoginPageModule,
     PatientPageModule,
     CalendrierPageModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   exports: [],
   providers: [
@@ -47,7 +61,12 @@ import { CalendrierPageModule } from './calendrier/calendrier.module';
     ThemeDetection,
     Contacts,
     NativePageTransitions,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]

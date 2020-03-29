@@ -1,15 +1,15 @@
 <ion-header no-border >
-    <ion-toolbar>
+    <ion-toolbar *ngFor="let user of UserDto">
     <div class="header-content"> 
      <div>
       <div class="img-content">
-        <img class="img-user" src="../../assets/picture_1558954558086.jpg">
+        <img class="img-user" src="http://localhost:3000/api/avatar/{{user.image}}">
       </div>
      </div>
      <div>
       <div>
-        <h1 class="u-lastname">
-          Ehui
+        <h1 class="u-lastname" >
+          {{user.firstName}}
         </h1>
       </div>
      </div> 

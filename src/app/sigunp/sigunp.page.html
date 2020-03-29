@@ -1,0 +1,115 @@
+
+<ion-content class="ion-padding">
+<div>
+
+  <ion-buttons>
+    <ion-button (click)="back()"><ion-icon name="ios-arrow-back"></ion-icon></ion-button>
+  </ion-buttons>
+
+  <div class="title">
+      <h2>
+        Créer un compte
+      </h2>
+  </div>
+
+</div>
+<form  [formGroup]="formInput">
+
+<div>
+  <h4 >
+    Vos informations personnels
+  </h4>
+</div>
+
+  <div>
+    <ion-item >
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input  formControlName="lastname" type="text" value=""></ion-input>
+   </ion-item>
+  </div>
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input  formControlName="firstname" type="text" value=""></ion-input>
+   </ion-item>
+  </div>
+
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input  formControlName="email" type="text" value=""></ion-input>
+   </ion-item>
+
+  </div>
+
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Adresse</ion-label>
+      <ion-input  formControlName="adresse" type="text" value=""></ion-input>
+   </ion-item>
+
+  </div>
+
+
+  <div>
+      <ion-item>
+        <ion-label position="floating">Role</ion-label>
+        <ion-select formControlName="role" interface="action-sheet">
+          <ion-select-option [value]="role" *ngFor="let role of roles">{{role}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  </div>
+
+  
+  <div>
+    <ion-item>
+      <ion-label position="floating">Sexe</ion-label>
+      <ion-select formControlName="gender" interface="action-sheet">
+        <ion-select-option [value]="gender" *ngFor="let gender of genders">{{gender}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div>
+    <h4 >
+      Enregistrer votre mot de passe
+    </h4>
+  </div>
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input  formControlName="password" type="text" value=""></ion-input>
+   </ion-item>
+  </div>
+
+<!--  <div>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input  formControlName="password" type="text" value=""></ion-input>
+   </ion-item>
+  </div>
+-->
+  <div>
+    <h4 >
+     Enregistrer une image de profil
+    </h4>
+  </div>
+  
+  <div>
+    <ion-item>
+      <ion-input (change)="handleFileInput($event.target.files)"  formControlName="image" type="file" value=""></ion-input>
+   </ion-item>
+  </div>
+  
+
+</form>
+
+
+
+
+<div class="sign-in" (click)="signup()"><ion-button expand="block">Inscription</ion-button> </div> 
+</ion-content>

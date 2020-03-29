@@ -1,6 +1,6 @@
 
 <ion-header no-shadow no-border hidenav-header>
-  <ion-toolbar> 
+  <ion-toolbar *ngFor="let user of UserDto"> 
   <div>
       <div class="ion-activatable">
     <div id="searchBar" class="search-content" >
@@ -16,7 +16,7 @@
         </div>
           <div class="avatar-content">
               <ion-avatar class="avatar">
-                  <img src="../../assets/picture_1558954558086.jpg">
+                  <img src="http://localhost:3000/api/avatar/{{user.image}}">
                 </ion-avatar>
               </div>
               

@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, Renderer2, OnInit, Renderer, SimpleChanges } from "@angular/core";
+import { Directive, Input, ElementRef, Renderer2, OnInit, SimpleChanges } from "@angular/core";
 import { IonContent, DomController } from '@ionic/angular';
 
 

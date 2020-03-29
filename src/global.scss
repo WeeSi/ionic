@@ -211,6 +211,15 @@ body.dark {
   --ion-item-settings:#202125;
 }
 
+.ios {
+  .title-button{
+    height: 48px;
+  }
+  .openNav .button-native {
+    color: #888888 !important;
+}
+}
+
 .searchbar-input{
   background: var(--ion-background-search) !important;
     border-radius: 8px !important;
@@ -226,6 +235,10 @@ body.dark {
     top: 14px;
     width: 21px;
     height: 21px;
+}
+
+.background-searchbar{
+  background: var(--ion-background-search) !important;
 }
 
 .sc-ion-searchbar-md-h {

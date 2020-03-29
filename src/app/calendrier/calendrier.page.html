@@ -33,7 +33,7 @@
   <div>
 
   <div class="title-month align-center"><h5>{{ viewTitle }}</h5></div>
-  <calendar [eventSource]="eventSource"
+  <!-- <calendar [eventSource]="eventSource"
   [calendarMode]="calendar.mode"
   [currentDate]="calendar.currentDate"
   (onCurrentDateChanged)="onCurrentDateChanged($event)"
@@ -44,7 +44,7 @@
   locale="fr-FR"
   step="30"
 >
-</calendar>
+</calendar> -->
 <input type="hidden" value="{{ date }}" [(ngModel)]="date">
 </div>
 

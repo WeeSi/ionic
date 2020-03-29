@@ -1,6 +1,6 @@
 
 <ion-header no-shadow no-border hidenav-header>
-  <ion-toolbar> 
+  <ion-toolbar *ngFor="let user of UserDto"> 
   <div>
       <div class="ion-activatable">
     <div searchBar id="searchBar" class="search-content" >
@@ -16,7 +16,7 @@
         </div>
           <div class="avatar-content">
               <ion-avatar class="avatar">
-                  <img src="../../assets/picture_1558954558086.jpg">
+                  <img src="http://localhost:3000/api/avatar/{{user.image}}">
                 </ion-avatar>
               </div>
               
@@ -38,12 +38,12 @@
       Médecins
   </ion-title>
   <ion-list lines="none">
-    <ion-item-sliding (click)="openMedecin(list)" *ngFor="let list of medecinsList">
-      <ion-item>
-       <div class="img-content"><img class="user_img" src="../../assets/{{list.img}}"> </div> 
+    <ion-item-sliding  *ngFor="let users of UsersDto">
+      <ion-item (click)="openMedecin(users)">
+       <div class="img-content"><img class="user_img" src="http://localhost:3000/api/avatar/{{users.image}}"> </div> 
         <ion-label><ion-text >
-          <h3 class="m-name">Dr {{list.firstname}} {{list.lastname}}</h3>
-          <p class="m-pro">{{list.spec}} - Lyon</p>
+          <h3 class="m-name">Dr {{users.firstName}} {{users.lastName}}</h3>
+          <p class="m-pro">{{users.address}}</p>
           <p class="m-city"></p>
           <div class="m-rate">
               <span class="fa fa-star checked"></span>
@@ -59,7 +59,7 @@
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option (click)="removePraticien(list)">Supprimer</ion-item-option>
+        <ion-item-option (click)="removePracticien(users.id)">Supprimer</ion-item-option>
       </ion-item-options>
       
     </ion-item-sliding>

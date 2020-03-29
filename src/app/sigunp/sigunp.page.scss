@@ -1,0 +1,33 @@
+p {
+    font-size: 0.8em;
+    color: #d2d2d2;
+}
+
+ion-slides {
+	height: 100%;
+}
+
+ion-slide {
+    display: block;
+}
+
+ion-label, .select-text {
+    margin-left: 10px;
+}
+
+.invalid {
+    border: 1px solid #ea6153;
+}
+
+ion-item {
+    --padding-start: 0;
+}
+
+.ios h2, .ios h4{
+    padding: 0px 10px 0px 10px;
+}
+
+h4{
+    margin-bottom: 0px;
+    margin-top: 45px;
+}

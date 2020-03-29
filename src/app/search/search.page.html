@@ -39,11 +39,10 @@
             <ion-item-sliding  (click)="openMedecin(item)" *ngFor="let item of items">
     
               <ion-item>
-               <div class="img-content"><img class="user_img" src="../../assets/{{item.img}}"> </div> 
+               <div class="img-content"><img class="user_img" src="http://localhost:3000/api/avatar/{{item.image}}"> </div> 
                 <ion-label><ion-text >
-                  <h3 class="m-name">Dr {{item.firstname}} {{item.lastname}}</h3>
-                  <p class="m-pro">{{item.spec}}</p>
-                  <p class="m-city">Lyon</p>
+                  <h3 class="m-name">Dr {{item.firstName}} {{item.lastName}}</h3>
+                  <p class="m-pro">{{item.address}}</p>
                 </ion-text></ion-label>
                 <ion-buttons >
                     <ion-button><ion-icon name="ios-arrow-forward"></ion-icon></ion-button>

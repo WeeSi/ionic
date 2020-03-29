@@ -4,13 +4,16 @@ import { Storage } from '@ionic/storage';
 import { ActionSheetController, ModalController, AlertController } from '@ionic/angular';
 import { UserPersonalInfoPage } from '../user-personal-info/user-personal-info.page';
 import { Router } from '@angular/router';
+import { UserService } from '../api/services/user.service';
+import { UserDto } from '../api/models/user-dto';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-tab5',
   templateUrl: './tab5.page.html',
   styleUrls: ['./tab5.page.scss'],
 })
-export class Tab5Page {
+export class Tab5Page implements OnInit {
 
 
   constructor(private storage: Storage, 
@@ -18,11 +21,20 @@ export class Tab5Page {
               public actionSheetController: ActionSheetController,
               public modalController: ModalController,
               private router: Router,
-              public alertController : AlertController   ) { 
+              public alertController : AlertController,
+              public userService: UserService,
+              private readonly authservice: AuthService,
+                ) { 
                
 }
+
+private UserDto: UserDto[] = [];
+
+  ngOnInit() {
+    this.userService.getUserMe().subscribe(user => {this.UserDto.push(user), console.log(user)});
+  }
 loginPage(){
-  this.router.navigateByUrl('/login');
+  this.authservice.logout();
 }
   toggleDarkTheme() {
    document.body.classList.add('dark');

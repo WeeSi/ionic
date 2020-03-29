@@ -1,9 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { ModalController, NavController } from '@ionic/angular';
 import { SearchPage } from '../search/search.page';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { MedecinPage } from '../medecin/medecin.page';
 import { PatientPage } from '../patient/patient.page';
+import { UserDto } from '../api/models/user-dto';
+import { UserService } from '../api/services/user.service';
 
 // tslint:disable-next-line: class-name
 export interface patient {
@@ -22,109 +24,24 @@ export interface patient {
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit {
   @ViewChild(IonInfiniteScroll, {static: false} ) infiniteScroll: IonInfiniteScroll;
+  private UserDto: UserDto[] = [];
+  constructor(
+    public modalController: ModalController,
+    public userService: UserService,
+    private navCtrl : NavController
+    ) {}
 
-  constructor(public modalController: ModalController) {}
+    commercials: UserDto[] = [];
 
-  patient: patient[] = [
-    {
-        firstname: 'Ehui',
-        lastname:  'Franck',
-        spec: 'Etudiant',
-        img: 'picture_1558954558086.jpg',
-        id: 1,
-        age:27,
-        role:'patient'
-    },
-    {
-        firstname: 'Alexis',
-        lastname:  'Brossette',
-        img: 'durant.jpg',
-        id: 2,
-        age:31,
-        role:'patient'
-    },
-    {
-        firstname: 'Nohwa ',
-        lastname:  'Hamadi',
-        img: 'fultz.jpg',
-        id: 3,
-        age:21
-    },
-    {
-        firstname: 'Clara',
-        lastname:  'Gianitelli',
-        img: 'lebron.jpg',
-        id: 4,
-        age:34
-    },
-    {
-        firstname: 'Elvia',
-        lastname:  'Gianitelli',
-        img: 'paul.jpg',
-        id: 5,
-        age:34
-    },
+  ngOnInit(): void {
+        this.userService.getUserMe().subscribe(user => {this.UserDto.push(user)});
+  }
 
-    {
-        firstname: 'Stephine',
-        lastname:  'Bonneton',
-        img: 'morant.jpg',
-        id: 6,
-        age:20
-    },
-
-    {
-      firstname: 'Laura',
-      lastname:  'Bonneton',
-      img: 'morant.jpg',
-      id: 7,
-      age:20
-  },
-
-  {
-    firstname: 'Ja',
-    lastname:  'Morant',
-    spec: 'Basketteur',
-    img: 'morant.jpg',
-    id: 8,
-    age:20
-},
-
-{
-  firstname: 'Wendy',
-  lastname:  'Gonno',
-  img: 'morant.jpg',
-  id: 9,
-  age:20
-},
-
-{
-  firstname: 'Sarah',
-  lastname:  'Ribero',
-  img: 'morant.jpg',
-  id: 11,
-  age:20
-},
-
-{
-  firstname: 'Cedric',
-  lastname:  'Beyer',
-  img: 'morant.jpg',
-  id: 12,
-  age:20
-},
-
-{
-  firstname: 'Ja',
-  lastname:  'Morant',
-  img: 'morant.jpg',
-  id: 13,
-  age:20
-},
-
-  ];
+  getCommercial(){
+    this.userService.getUserCommercials().subscribe(comemrcials =>this.commercials = comemrcials as UserDto[])
+  }
 
   async openPatient(list: any) {
       const modal = await this.modalController.create({
@@ -141,12 +58,21 @@ export class Tab3Page {
     const modal = await this.modalController.create({
       component : SearchPage,
         componentProps: { 
-          medecinsList: this.patient,
+          medecinsList: this.commercials,
           name :'patients'
       }
     });
 
     return await modal.present();
+}
+
+removeCommercial(id){
+  this.userService.deleteUserId(id).subscribe( () => console.log('user deleted'));
+this.ionViewWillEnter();
+}
+
+ionViewWillEnter() {
+  this.getCommercial();
 }
 
 doRefresh(event) {
@@ -163,7 +89,7 @@ loadData(event: { target: { complete: () => void; disabled: boolean; }; }) {
     console.log('Done');
     event.target.complete();
     
-    if (this.patient.length == 1000) {
+    if (this.commercials.length == 1000) {
       event.target.disabled = true;
     }
   }, 500);

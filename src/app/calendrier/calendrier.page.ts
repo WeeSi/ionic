@@ -5,7 +5,9 @@ import localeFr from '@angular/common/locales/fr';
 import { DatePipe } from '@angular/common'
 registerLocaleData(localeFr, 'Fr');
 
-
+export interface DataDate{
+  slot:string;
+}
 
 @Component({
   selector: 'app-calendrier',
@@ -27,7 +29,7 @@ export class CalendrierPage implements OnInit {
   selectedDay = new Date();
 
   calendar = {
-    mode: 'month',
+    mode: 'M',
     currentDate: this.selectedDay,
   };
 
@@ -61,7 +63,7 @@ export class CalendrierPage implements OnInit {
   const date = this.datepipe.transform(ev.selectedTime, 'yyyy-MM-dd');
   this.date = date;
 
-  const data = [
+  const data :DataDate[] = [
     { slot : '11:30'},
     { slot : '12:00'},
     { slot : '14:00'},

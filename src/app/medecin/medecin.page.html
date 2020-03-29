@@ -21,22 +21,22 @@
             <ion-button (click)="close()"><ion-icon name="arrow-back"></ion-icon></ion-button>
           </ion-buttons>
           <div>
-              Dr.{{test.firstname}} {{test.lastname}}
+              Dr.{{test.firstName}} {{test.lastName}}
           </div>
         </div>
-          <ion-buttons slot="end">  <ion-button ><ion-icon name="heart-empty"></ion-icon></ion-button></ion-buttons>
+        
     </ion-toolbar>
   </ion-header>
   
   <div class="image-box">
         <div 
-          class="image-box__background" [ngStyle]="{'background-image':'url(../../assets/'+test.img+')'}"></div>
+          class="image-box__background" [ngStyle]="{'background-image':'url(http://localhost:3000/api/avatar/'+test.image+')'}"></div>
         <div class="image-box__overlay"></div>
         <div class="image-box__content">
         </div>
       </div>
 
-    <div class="schedule"> <ion-button expand="block" (click)="openCalendrier(test)" >Prendre rendez-vous</ion-button> </div> 
+    <div class="schedule"> <ion-button expand="block" (click)="addClient()" >Ajouter en tant que client</ion-button> </div> 
 <ion-content id="IonContent" #IonContent>
   <div class="ion-padding content-container">
 
@@ -44,7 +44,7 @@
         <div class="m-name-m-age" #triggerElement>
             <div>
                 <h1 class="m-name">
-                   Dr.{{test.firstname}} {{test.lastname}}
+                  Dr.{{test.firstName}} {{test.lastName}}
                 </h1>
             </div>
             
@@ -54,7 +54,7 @@
     <div class="m-location">
         <div>
             <p class="m-loc-icon"><ion-icon name="pin"></ion-icon></p>
-             <p class="m-loc-text">{{test.city}}</p>
+             <p class="m-loc-text">{{test.address}}</p>
         </div>
     </div>
 
@@ -68,7 +68,7 @@
     </div>
 
     <div class="m-content-desc" >
-        <h5 class="m-desc"> Desciption</h5>
+        <h5 class="m-desc">Desciption</h5>
       <p>
             Stephen Strange, alias Docteur Strange est un super-héros évoluant dans l'univers Marvel de la maison d'édition Marvel Comics. Créé par le scénariste Stan Lee et le dessinateur Steve Ditko, le personnage de fiction apparaît pour la première fois dans le comic book Strange Tales #110 en juillet 1963.
       </p>

@@ -15,24 +15,22 @@
   </ion-title>
  
   <div class="ion-padding">
-    <div class="user-edit-content">
+    <div class="user-edit-content" *ngFor="let user of UserDto">
       
       <ion-item>
          <ion-label position="stacked">Votre nom</ion-label>
-         <ion-input value="Ehui"></ion-input>
+         <ion-input value="{{user.firstName}}"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label position="stacked">Votre prénom</ion-label>
-          <ion-input value="Franck"></ion-input>
+          <ion-input value="{{user.lastName}}"></ion-input>
       </ion-item>
 
       <ion-item>
-          <ion-label position="stacked">Le sexe</ion-label>
+          <ion-label position="stacked">Votre sexe</ion-label>
           <ion-select interface="action-sheet" cancelText="" >
-              <ion-select-option value="f">Femme</ion-select-option>
-              <ion-select-option value="m">Homme</ion-select-option>
-              <ion-select-option value="a">Autre</ion-select-option>
+              <ion-select-option [value]="gender" *ngFor="let gender of genders" [selected]="user.gender" >{{gender}}</ion-select-option>
             </ion-select>
       </ion-item>
 

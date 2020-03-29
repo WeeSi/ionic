@@ -17,29 +17,29 @@
       </p>
     </div>
     <div class="credentials">
-
+<form [formGroup]="formInput">
       <div class="id">
         <ion-item>
-            <ion-label  position="floating">Identifiant</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-label position="floating">Identifiant</ion-label>
+            <ion-input  formControlName="email" type="text" value=""></ion-input>
          </ion-item>
         </div>
 
          <div class="password">
          <ion-item>
              <ion-label position="floating">Mot de passe</ion-label>
-             <ion-input [(ngModel)]="password" [type]="passwordType" value=""></ion-input>
+             <ion-input formControlName="password" [type]="passwordType" value=""></ion-input>
              <ion-icon [name]="iconeye" slot="end" (click)="togglePassword()" class="ion-align-self-center"></ion-icon>
          </ion-item>
         </div>
-
+      </form>
         <div class="forgot-password">
           <span>
             Mot de passe oublié?
           </span>
         </div>
 
-         <div class="sign-in" (click)="tabPage()"><ion-button expand="block" >Se connecter</ion-button> </div> 
+         <div class="sign-in" (click)="login()"><ion-button expand="block" >Se connecter</ion-button> </div> 
 
          <div class="connect-with">
             <span>
@@ -62,7 +62,7 @@
 
           <div class="sign-up-btn">
             <div>
-              <span>Pas de compte? </span><span class="sign-up-page">Inscrivez-vous</span>
+              <span>Pas de compte? </span><span class="sign-up-page" (click)="signup()">Inscrivez-vous</span>
             </div>
           </div>
 
